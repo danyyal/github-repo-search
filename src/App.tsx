@@ -23,9 +23,10 @@ const App = () => {
             <div className="container">
               <Alert />
               <Routes>
-                <Route path="/github-repo-search" Component={Home} />
+                <Route path="/" Component={Home} />
                 <Route path="/about" Component={About} />
                 <Route path="/bookedMarked" Component={bookedMarkedRepos} />
+                <Route Component={Home} />
               </Routes>
             </div>
           </div>

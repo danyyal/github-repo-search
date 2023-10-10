@@ -11,7 +11,7 @@ const Navbar = ({ icon, title }: { icon: string; title: string }) => {
 
       <ul>
         <li>
-          <Link to="/github-repo-search">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/bookedMarked">Bookmarks</Link>
