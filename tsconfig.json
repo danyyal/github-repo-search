@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "ES6", /* Specify the target ECMAScript version (e.g., ES6) */
+        "module": "CommonJS", /* Specify the module system (e.g., CommonJS) */
+        "outDir": "./dist", /* Output directory for compiled JavaScript files */
+        "strict": true, /* Enable strict type checking */
+        "esModuleInterop": true, /* Allow default imports from CommonJS modules */
+        "jsx": "react", /* Specify JSX compiler options (e.g., react, preserve) */
+        "forceConsistentCasingInFileNames": true, /* Enforce consistent casing of file names */
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/context/types.ts"
+, "src/context/alert/AlertState.tsx"    ], /* Specify the files to be included in compilation */
+    "exclude": [
+        "node_modules"
+    ] /* Specify the files and directories to be excluded from compilation */
+}

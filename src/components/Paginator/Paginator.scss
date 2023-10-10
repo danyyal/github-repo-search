@@ -1,0 +1,32 @@
+/* Pagination.scss */
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px; /* Increase margin for more space */
+
+  .page-item {
+    display: inline-block;
+    margin-right: 10px; /* Increase margin for more space */
+
+    button {
+      background-color: red;
+      color: black;
+      border: 1px solid black;
+      padding: 8px 16px; /* Increase padding for larger buttons */
+      cursor: pointer;
+
+      &:hover {
+        background-color: black;
+        color: red;
+      }
+    }
+
+    &.active {
+      button {
+        background-color: black;
+        color: red;
+      }
+    }
+  }
+}
