@@ -2,7 +2,7 @@
   "name": "githubsearch",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://danyyal.github.io/github-repo-search",
+  "homepage": "https://danyyal.github.io",
   "dependencies": {
     "axios": "^0.19.0",
     "gh-pages": "^6.0.0",
