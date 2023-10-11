@@ -14,6 +14,21 @@
   min-width: 245px;
   max-width: 245px;
   position: relative;
+  transition: transform 0.3s ease;
+  .icon-delete {
+    display: none;
+  }
+  &:hover {
+    transform: scale(1.02);
+    .bookmark-icon {
+      .icon-confirmed {
+        display: none;
+      }
+      .icon-delete {
+        display: block;
+      }
+    }
+  }
 }
 
 /* Style the bookmark icon */

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import {
   BsFillBookmarkCheckFill,
   BsFillBookmarkDashFill,
+  BsFillBookmarkPlusFill,
 } from "react-icons/bs";
 import githubContext from "../../../context/github/githubContext.ts";
 import "./RepoItem.scss";
@@ -18,7 +19,7 @@ const RepoItem = ({
 }) => {
   const gc: any = useContext(githubContext);
   const id = repo.id;
-  const bookmarks = JSON.parse(localStorage.getItem("bookmarks") ?? "");
+  const bookmarks = JSON.parse(localStorage.getItem("bookmarks") ?? "[]");
   const bookMarkedIds = bookmarks.map((repo: Repo) => repo.id);
   const isBookedMarked = bookMarkedIds.filter((i: number) => i === id);
   const filteredMarks = bookMarkedIds.filter((i: number) => i !== id);
@@ -26,8 +27,8 @@ const RepoItem = ({
     <div className="card text-center">
       <div className="bookmark-icon">
         {isBookedMarked.length === 0 ? (
-          <BsFillBookmarkCheckFill
-            color="blue"
+          <BsFillBookmarkPlusFill
+            color="#516dd6"
             onClick={() => {
               if (addBookmark) addBookmark(repo);
               gc.setBookMarkId([...bookMarkedIds, id]);
@@ -35,13 +36,26 @@ const RepoItem = ({
             }}
           />
         ) : (
-          <BsFillBookmarkDashFill
-            onClick={() => {
-              removeBookmark(repo);
-              gc.setBookMarkId(filteredMarks);
-              ToastMessage.success("Successfully removed from bookmarks.");
-            }}
-          />
+          <>
+            <BsFillBookmarkCheckFill
+              className="icon-confirmed"
+              color="#142c87"
+              onClick={() => {
+                removeBookmark(repo);
+                gc.setBookMarkId(filteredMarks);
+                ToastMessage.success("Successfully removed from bookmarks.");
+              }}
+            />
+            <BsFillBookmarkDashFill
+              className="icon-delete"
+              color="red"
+              onClick={() => {
+                removeBookmark(repo);
+                gc.setBookMarkId(filteredMarks);
+                ToastMessage.success("Successfully removed from bookmarks.");
+              }}
+            />
+          </>
         )}
       </div>
       <img
